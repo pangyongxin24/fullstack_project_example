@@ -21,10 +21,11 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public void insert(Person person) {
-	final String sql = "insert into person(name) values(?)";
+	final String sql = "insert into person(name) values(?) person(lastname) value(?)";
 	try (PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 	    // Set the parameters for the insert.
 	    pstmt.setString(1, person.getName());
+	    pstmt.setString(2, person.getLastName());
 
 	    pstmt.executeUpdate();
 
@@ -56,6 +57,7 @@ public class PersonDaoImpl implements PersonDao {
 		    Person person = new Person();
 		    person.setId(rs.getInt(1));
 		    person.setName(rs.getString(2));
+		    person.setLastName(rs.getString(3));
 
 		    return person;
 		}
@@ -95,11 +97,12 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public void update(Person person) {
-	final String sql = "update person set name= ? where id_person = ?";
+	final String sql = "update person set name= ? set last name= ? where id_person = ?";
 	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 	    // Set the parameters for the update.
 	    pstmt.setString(1, person.getName());
-	    pstmt.setInt(2, person.getId());
+	    pstmt.setString(2, person.getLastName());
+	    pstmt.setInt(3, person.getId());
 
 	    pstmt.executeUpdate();
 	} catch (SQLException ex) {

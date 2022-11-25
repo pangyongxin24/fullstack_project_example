@@ -29,7 +29,7 @@ public class PersonDaoImplTest {
 
 	    Person person = new Person();
 	    person.setName("Serena");
-	    person.setLastName("P");
+	    person.setLastName("Pang");
 
 	    personDao.insert(person);
 
@@ -45,7 +45,7 @@ public class PersonDaoImplTest {
 	    PersonDao personDao = new PersonDaoImpl(conn);
 	    Person person1 = new Person();
 	    person1.setName("Serena");
-	    person1.setLastName("P");
+	    person1.setLastName("Pang");
 	    personDao.insert(person1);
 	    int idPerson = person1.getId();
 

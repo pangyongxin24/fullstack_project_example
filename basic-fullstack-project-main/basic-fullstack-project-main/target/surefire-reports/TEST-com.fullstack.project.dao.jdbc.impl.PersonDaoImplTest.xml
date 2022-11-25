@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="1" name="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" time="0.058" errors="4" skipped="0">
+<testsuite tests="5" failures="1" name="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" time="0.049" errors="4" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="18.0.2.1+1-1"/>
@@ -62,9 +62,9 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="delete" time="0.018">
-    <error message="java.sql.SQLException: (conn=117) Field &apos;last_name&apos; doesn&apos;t have a default value" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLException: (conn=117) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:41)
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="delete" time="0.016">
+    <error message="java.sql.SQLSyntaxErrorException: (conn=128) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Carlos&apos;)&apos; at line 1" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLSyntaxErrorException: (conn=128) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Carlos&apos;)&apos; at line 1
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:42)
 	at com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest.delete(PersonDaoImplTest.java:109)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -91,8 +91,8 @@
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.sql.SQLException: (conn=117) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+Caused by: java.sql.SQLSyntaxErrorException: (conn=128) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Carlos&apos;)&apos; at line 1
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:280)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:368)
 	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
 	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:833)
@@ -102,15 +102,15 @@ Caused by: java.sql.SQLException: (conn=117) Field &apos;last_name&apos; doesn&a
 	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:29)
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:30)
 	... 26 more
 </error>
-    <system-err>[ WARN] (main) Error: 1364-HY000: Field &apos;last_name&apos; doesn&apos;t have a default value
+    <system-err>[ WARN] (main) Error: 1064-42000: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Carlos&apos;)&apos; at line 1
 </system-err>
   </testcase>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="insert" time="0.012">
-    <error message="java.sql.SQLException: (conn=118) Field &apos;last_name&apos; doesn&apos;t have a default value" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLException: (conn=118) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:41)
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="insert" time="0.01">
+    <error message="java.sql.SQLSyntaxErrorException: (conn=129) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLSyntaxErrorException: (conn=129) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:42)
 	at com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest.insert(PersonDaoImplTest.java:34)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -137,8 +137,8 @@ Caused by: java.sql.SQLException: (conn=117) Field &apos;last_name&apos; doesn&a
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.sql.SQLException: (conn=118) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+Caused by: java.sql.SQLSyntaxErrorException: (conn=129) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:280)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:368)
 	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
 	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:833)
@@ -148,13 +148,13 @@ Caused by: java.sql.SQLException: (conn=118) Field &apos;last_name&apos; doesn&a
 	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:29)
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:30)
 	... 26 more
 </error>
-    <system-err>[ WARN] (main) Error: 1364-HY000: Field &apos;last_name&apos; doesn&apos;t have a default value
+    <system-err>[ WARN] (main) Error: 1064-42000: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1
 </system-err>
   </testcase>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="findAll" time="0.005">
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="findAll" time="0.007">
     <failure type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -187,9 +187,9 @@ Caused by: java.sql.SQLException: (conn=118) Field &apos;last_name&apos; doesn&a
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="update" time="0.01">
-    <error message="java.sql.SQLException: (conn=120) Field &apos;last_name&apos; doesn&apos;t have a default value" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLException: (conn=120) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:41)
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="update" time="0.008">
+    <error message="java.sql.SQLSyntaxErrorException: (conn=131) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;P&apos;)&apos; at line 1" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLSyntaxErrorException: (conn=131) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;P&apos;)&apos; at line 1
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:42)
 	at com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest.update(PersonDaoImplTest.java:84)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -216,8 +216,8 @@ Caused by: java.sql.SQLException: (conn=118) Field &apos;last_name&apos; doesn&a
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.sql.SQLException: (conn=120) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+Caused by: java.sql.SQLSyntaxErrorException: (conn=131) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;P&apos;)&apos; at line 1
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:280)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:368)
 	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
 	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:833)
@@ -227,15 +227,15 @@ Caused by: java.sql.SQLException: (conn=120) Field &apos;last_name&apos; doesn&a
 	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:29)
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:30)
 	... 26 more
 </error>
-    <system-err>[ WARN] (main) Error: 1364-HY000: Field &apos;last_name&apos; doesn&apos;t have a default value
+    <system-err>[ WARN] (main) Error: 1064-42000: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;P&apos;)&apos; at line 1
 </system-err>
   </testcase>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="findById" time="0.013">
-    <error message="java.sql.SQLException: (conn=121) Field &apos;last_name&apos; doesn&apos;t have a default value" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLException: (conn=121) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:41)
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest" name="findById" time="0.008">
+    <error message="java.sql.SQLSyntaxErrorException: (conn=132) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1" type="com.fullstack.project.exceptions.Exceptions$DbException">com.fullstack.project.exceptions.Exceptions$DbException: java.sql.SQLSyntaxErrorException: (conn=132) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:42)
 	at com.fullstack.project.dao.jdbc.impl.PersonDaoImplTest.findById(PersonDaoImplTest.java:49)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -262,8 +262,8 @@ Caused by: java.sql.SQLException: (conn=120) Field &apos;last_name&apos; doesn&a
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.sql.SQLException: (conn=121) Field &apos;last_name&apos; doesn&apos;t have a default value
-	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+Caused by: java.sql.SQLSyntaxErrorException: (conn=132) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:280)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:368)
 	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
 	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:833)
@@ -273,10 +273,10 @@ Caused by: java.sql.SQLException: (conn=121) Field &apos;last_name&apos; doesn&a
 	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
 	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
-	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:29)
+	at com.fullstack.project.dao.jdbc.impl.PersonDaoImpl.insert(PersonDaoImpl.java:30)
 	... 26 more
 </error>
-    <system-err>[ WARN] (main) Error: 1364-HY000: Field &apos;last_name&apos; doesn&apos;t have a default value
+    <system-err>[ WARN] (main) Error: 1064-42000: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;person(lastname) value(&apos;Pang&apos;)&apos; at line 1
 </system-err>
   </testcase>
 </testsuite>
