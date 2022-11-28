@@ -1,2 +1,3 @@
+com/fullstack/project/dao/jdbc/impl/PersonDaoImplTest.class
 com/fullstack/project/dao/jdbc/DbConnectionTest.class
 com/fullstack/project/dao/jdbc/impl/CountryDaoImplTest.class

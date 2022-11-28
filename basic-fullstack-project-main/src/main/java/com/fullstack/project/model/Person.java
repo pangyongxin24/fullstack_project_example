@@ -1,17 +1,17 @@
 package com.fullstack.project.model;
 
 public class Person {
-    private String id;
+    private int id;
     private String name;
     private String lastName;
     private int age;
     private Country country;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
