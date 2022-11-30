@@ -16,6 +16,7 @@ import org.junit.Test;
 import com.fullstack.project.dao.jdbc.PersonDao;
 import com.fullstack.project.dao.jdbc.DbConnection;
 import com.fullstack.project.model.Person;
+import com.fullstack.project.model.Country;
 
 /**
  * Test cases for the {@code DbConnection} class.
@@ -30,6 +31,10 @@ public class PersonDaoImplTest {
 	    Person person = new Person();
 	    person.setName("Serena");
 	    person.setLastName("Pang");
+	    person.setAge(1);
+	    Country country = new Country();
+	    country.setId(1);
+	    person.setCountry(country);
 
 	    personDao.insert(person);
 
@@ -46,6 +51,12 @@ public class PersonDaoImplTest {
 	    Person person1 = new Person();
 	    person1.setName("Serena");
 	    person1.setLastName("Pang");
+	    person1.setAge(8);
+
+		Country country = new Country();
+	    country.setId(1);
+	    person1.setCountry(country);
+
 	    personDao.insert(person1);
 	    int idPerson = person1.getId();
 
@@ -80,12 +91,19 @@ public class PersonDaoImplTest {
 	    Person person = new Person();
 	    person.setName("helloSerena");
 	    person.setLastName("P");
+	    person.setAge(1);
+	    Country country = new Country();
+	    country.setId(1);
+	    person.setCountry(country);
 
 	    personDao.insert(person);
 
 	    person.setName("helloSerena" + new Date());
 	    person.setLastName("P" + new Date());
-
+	    person.setAge(1);
+	    Country country2 = new Country();
+	    country2.setId(2);
+	    person.setCountry(country2);
 	    personDao.update(person);
 
 	    Person current = personDao.findById(person.getId());
@@ -105,6 +123,10 @@ public class PersonDaoImplTest {
 	    Person person = new Person();
 	    person.setName("helloJuan");
 	    person.setLastName("Carlos");
+	    person.setAge(2);
+	    Country country = new Country();
+	    country.setId(1);
+	    person.setCountry(country);
 
 	    personDao.insert(person);
 
