@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" time="0.285" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" time="0.34" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="18.0.2.1+1-1"/>
@@ -62,9 +62,9 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="delete" time="0.212"/>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="insert" time="0.008"/>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="findAll" time="0.011"/>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="update" time="0.042"/>
-  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="findById" time="0.012"/>
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="delete" time="0.263"/>
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="insert" time="0.01"/>
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="findAll" time="0.012"/>
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="update" time="0.044"/>
+  <testcase classname="com.fullstack.project.dao.jdbc.impl.CountryDaoImplTest" name="findById" time="0.011"/>
 </testsuite>

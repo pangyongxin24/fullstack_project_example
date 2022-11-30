@@ -11,6 +11,7 @@ import java.util.List;
 import com.fullstack.project.dao.jdbc.PersonDao;
 import com.fullstack.project.exceptions.Exceptions.DbException;
 import com.fullstack.project.model.Person;
+import com.fullstack.project.model.Country;
 
 public class PersonDaoImpl implements PersonDao {
     private Connection conn;
@@ -21,13 +22,13 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public void insert(Person person) {
-	final String sql = "insert into person(name, lastname, age, country) values(?,?,?,?,?)";
+	final String sql = "insert into person(name, lastname, age, country) values(?,?,?,?)";
 	try (PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 	    // Set the parameters for the insert.
 	    pstmt.setString(1, person.getName());
 	    pstmt.setString(2, person.getLastName());
 	    pstmt.setInt(3, person.getAge());
-	    pstmt.setString(4, person.getCountry());
+	    pstmt.setInt(4, person.getCountry().getId());
 
 	    pstmt.executeUpdate();
 
@@ -85,8 +86,10 @@ public class PersonDaoImpl implements PersonDao {
 		    person.setId(rs.getInt(1));
 		    person.setName(rs.getString(2));
 		    person.setLastName(rs.getString(3));
-		    person.setAge(rs.getString(4));
-		    person.setCountry(rs.getString(5));
+		    person.setAge(rs.getInt(4));
+		    Country country = new Country();
+	    	country.setId(rs.getInt(5));
+		    person.setCountry(country);
 
 		    people.add(person);
 		}
@@ -107,7 +110,7 @@ public class PersonDaoImpl implements PersonDao {
 	    pstmt.setString(1, person.getName());
 	    pstmt.setString(2, person.getLastName());
 	    pstmt.setInt(3, person.getAge());
-	    pstmt.setString(4, person.getCountry());
+	    pstmt.setInt(4, person.getCountry().getId());
 	    pstmt.setInt(5, person.getId());
 
 	    pstmt.executeUpdate();
